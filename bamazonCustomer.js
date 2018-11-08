@@ -21,7 +21,7 @@ connection.connect(function (err) {
   });
 
 function startPurchase() {
-  connection.query('SELECT id, product_name, price, stock_quantity FROM products', function (err, res) {
+  connection.query('SELECT id, product_name, price, stock_quantity,department_name FROM products', function (err, res) {
       if (err) throw err;
       console.table(res);
       console.log('\n');
@@ -90,7 +90,7 @@ function updateTotalSales(id, purchaseQuantity) {
         },
   {
         id: id,
-      }, ]
+      },]
   );
     });
 }
